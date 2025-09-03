@@ -254,3 +254,53 @@ mv /etc/kubernetes/pki/ca.crt /tmp/
 ```
 
 Re-run the Node Join Command
+
+```
+### Troubleshoot Error
+🛠 Fixes for rpc error: code = Unimplemented desc = unknown service runtime.v1.RuntimeService
+
+Check containerd version → containerd --version (must be ≥ 1.6.x, upgrade if older).
+
+Enable CRI plugin → in /etc/containerd/config.toml set: disabled_plugins = [].
+
+Enable systemd cgroups → add:
+
+[plugins."io.containerd.grpc.v1.cri".containerd.runtimes.runc.options]
+  SystemdCgroup = true
+
+Restart containerd → systemctl restart containerd && systemctl enable containerd.
+
+Verify CRI socket → crictl --runtime-endpoint unix:///var/run/containerd/containerd.sock info (should print runtime info).
+
+Retry kubeadm → kubeadm init --pod-network-cidr=10.244.0.0/16.
+
+Kernel warning → your kernel 4.18.x is unsupported; upgrade to 5.4, 5.10, or 5.15 LTS (or any 6.x) for stability & cgroups v2.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
