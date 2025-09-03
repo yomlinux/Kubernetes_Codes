@@ -89,6 +89,9 @@ EOF
 sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start docker
 sudo service docker status
+systemctl restart containerd
+systemctl status containerd
+
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl enable docker && systemctl start docker 
