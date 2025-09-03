@@ -86,15 +86,15 @@ EOF
 ### Install Kubeadm and Docker packages
 
 ```	
-sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl start docker
-sudo service docker status
+sudo yum install containerd.io 
+sudo systemctl start containerd.io 
+sudo service containerd.io  status
 systemctl restart containerd
 systemctl status containerd
 
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-systemctl enable docker && systemctl start docker 
+systemctl enable containerd.io  && systemctl start containerd.io  
 systemctl enable kubelet && systemctl start kubelet
 
 kubeadm init --pod-network-cidr=10.244.0.0/16
