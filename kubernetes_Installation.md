@@ -31,7 +31,7 @@ firewall-cmd --permanent --add-port=10250/tcp
 firewall-cmd --permanent --add-port=10251/tcp
 firewall-cmd --permanent --add-port=10252/tcp
 firewall-cmd --permanent --add-port=10255/tcp
-firewall-cmd –reload
+firewall-cmd --reload
 ```
 
 ```
