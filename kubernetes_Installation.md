@@ -87,7 +87,7 @@ EOF
 
 ```	
 sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-sudo systemctl start containerd.io 
+sudo systemctl start containerd
 sudo service containerd.io  status
 systemctl restart containerd
 systemctl status containerd
