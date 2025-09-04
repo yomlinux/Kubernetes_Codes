@@ -94,7 +94,7 @@ systemctl status containerd
 
 
 yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
-systemctl enable containerd.io  && systemctl start containerd.io  
+systemctl enable containerd  && systemctl start containerd
 systemctl enable kubelet && systemctl start kubelet
 
 kubeadm init --pod-network-cidr=10.244.0.0/16
