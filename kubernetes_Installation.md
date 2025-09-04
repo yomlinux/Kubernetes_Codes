@@ -86,7 +86,7 @@ EOF
 ### Install Kubeadm and Docker packages
 
 ```	
-sudo yum install containerd.io 
+sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start containerd.io 
 sudo service containerd.io  status
 systemctl restart containerd
