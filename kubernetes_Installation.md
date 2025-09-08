@@ -194,12 +194,11 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 ```
 ### Add Docker Repository to Install container run-time
 ```
-yum install yum-utils -y
+sudo dnf install -y docker-ce docker-ce-cli containerd.io yum-utils kubeadm -y docker-buildx-plugin docker-compose-pluginy git wget 
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
-
-sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-pluginy git wget 
-yum install kubeadm -y
-
+```
+```
+systemctl enable --now containerd
 systemctl enable docker && systemctl start docker
 systemctl enable kubelet && systemctl start kubelet
 ```
