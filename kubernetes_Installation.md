@@ -86,14 +86,14 @@ EOF
 ### Install Kubeadm and Docker packages
 
 ```	
-sudo yum install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start containerd
 sudo service containerd.io  status
 systemctl restart containerd
 systemctl status containerd
 
 
-yum install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
+dnf install -y kubelet kubeadm kubectl --disableexcludes=kubernetes
 systemctl start containerd  && systemctl enable containerd
 systemctl start kubelet && systemctl enable kubelet
 
@@ -108,7 +108,7 @@ kubeadm init --pod-network-cidr=10.244.0.0/16
 error execution phase preflight: [preflight] Some fatal errors occurred:
         [ERROR CRI]: container runtime is not running: output: E1211 20:58:19.685923  104550 remote_runtime.go:948] "Status from runtime service failed" err="rpc error: code = Unimplemented desc = unknown service runtime.v1alpha2.RuntimeService"
         
-[root@kubemaster ~]#  rm /etc/containerd/config.toml
+[root@kubemaster ~]#  rm -rf /etc/containerd/config.toml
 rm: cannot remove ‘/etc/containerd/config.toml’: No such file or directory
 [root@kubemaster ~]# systemctl restart containerd
 ```	
@@ -197,7 +197,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 yum install yum-utils -y
 yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
-yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin git wget -y
+sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-pluginy git wget 
 yum install kubeadm -y
 
 systemctl enable docker && systemctl start docker
