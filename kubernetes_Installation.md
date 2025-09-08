@@ -124,8 +124,7 @@ kubectl get nodes --all-namespaces
 
 ### Example Command 
 ```	
-kubeadm join 192.168.117.200:6443 --token 869h67.4x0irxa14419ep1s \
-        --discovery-token-ca-cert-hash sha256:da5ed4a9ec779f8b1eca198e8d6fe7b5cf8c29fa8f1f512b0099a808b17759bc
+kubeadm join 192.168.117.200:6443 --token 869h67.4x0irxa14419ep1s --discovery-token-ca-cert-hash sha256:da5ed4a9ec779f8b1eca198e8d6fe7b5cf8c29fa8f1f512b0099a808b17759bc
 ```	
 
 ### Add Kube Flannel to create Networking between all the Nodes
@@ -196,7 +195,7 @@ gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cl
 ### Add Docker Repository to Install container run-time
 ```
 yum install yum-utils -y
-yum-config-manager     --add-repo     https://download.docker.com/linux/centos/docker-ce.repo
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 
 yum install docker-ce docker-ce-cli containerd.io docker-compose-plugin git wget -y
 yum install kubeadm -y
@@ -207,7 +206,7 @@ systemctl enable kubelet && systemctl start kubelet
 
 ### Join Node to Kubernetes Cluster 
 ```
-kubeadm join 192.168.175.200:6443 --token vaki2g.wevj9qs1d6unyj0k         --discovery-token-ca-cert-hash sha256:68c74acbbcea624e2cdbeee4acc1a3feb96f58a53b643476b9f77769e340b98b
+kubeadm join 192.168.175.200:6443 --token vaki2g.wevj9qs1d6unyj0k --discovery-token-ca-cert-hash sha256:68c74acbbcea624e2cdbeee4acc1a3feb96f58a53b643476b9f77769e340b98b
 ```
 ### Rejoin Command ###
 ```
