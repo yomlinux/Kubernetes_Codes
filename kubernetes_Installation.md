@@ -127,15 +127,9 @@ kubectl get nodes --all-namespaces
 kubeadm join 192.168.117.200:6443 --token 869h67.4x0irxa14419ep1s --discovery-token-ca-cert-hash sha256:da5ed4a9ec779f8b1eca198e8d6fe7b5cf8c29fa8f1f512b0099a808b17759bc
 ```	
 
-### Add Kube Flannel to create Networking between all the Nodes
+### Add Kube Calico to create Networking between all the Nodes
 ```	
-git clone https://github.com/techarkit/Linux_guides.git
-cd Linux_guides/
-sudo kubectl apply -f /root/Linux_guides/kube-flannel.yml
-
-OR
-
-kubectl apply -f https://github.com/flannel-io/flannel/releases/latest/download/kube-flannel.yml
+kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
 ```	
 
 ```
