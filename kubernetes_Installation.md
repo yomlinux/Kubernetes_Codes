@@ -200,6 +200,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 ```
 systemctl enable --now containerd
 systemctl enable docker && systemctl start docker
+systemctl enable --now kubelet
 systemctl enable kubelet && systemctl start kubelet
 ```
 
