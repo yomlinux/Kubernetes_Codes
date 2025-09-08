@@ -243,7 +243,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
 systemctl restart kubelet
 
-kubeadm join 192.168.175.200:6443 --token vaki2g.wevj9qs1d6unyj0k         --discovery-token-ca-cert-hash sha256:68c74acbbcea624e2cdbeee4acc1a3feb96f58a53b643476b9f77769e340b98b
+kubeadm join 192.168.175.200:6443 --token vaki2g.wevj9qs1d6unyj0k --discovery-token-ca-cert-hash sha256:68c74acbbcea624e2cdbeee4acc1a3feb96f58a53b643476b9f77769e340b98b
 ```
 
 ### If you get ca.crt alreay exists error then delete the file
