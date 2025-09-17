@@ -129,7 +129,7 @@ kubeadm join 192.168.117.200:6443 --token 869h67.4x0irxa14419ep1s --discovery-to
 
 ### Add Kube Calico to create Networking between all the Nodes
 ```	
-kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+kubectl apply -f https://projectcalico.docs.tigera.io/manifests/calico.yaml
 ```	
 
 ```
