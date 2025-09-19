@@ -88,7 +88,7 @@ EOF
 ```	
 sudo dnf install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 sudo systemctl start containerd
-sudo service containerd.io  status
+sudo service containerd status
 systemctl restart containerd
 systemctl status containerd
 
@@ -193,7 +193,7 @@ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce
 ```
 ```
 systemctl enable --now containerd
-systemctl enable docker && systemctl start docker
+systemctl enable containerd && systemctl start containerd
 systemctl enable --now kubelet
 systemctl enable kubelet && systemctl start kubelet
 ```
